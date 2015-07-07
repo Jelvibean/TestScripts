@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Test</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+<style>
+body {padding: 10px;}
+.num {font-family: "Helvetica", Georgia, Serif;}
+.vspace_bottom {margin-bottom: 15px;}
+
+input {
+
+  color: #000;
+  cursor: text; 
+  padding: 6px 10px 8px;
+  margin: 0;
+  border: 1px solid #AB82FF;
+  border-radius: 5px; 
+  font-size: 14px;
+  font-family: "Helvetica Neue",arial,sans-serif;
+
+
+
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="times vspace_bottom">
+   <span class="num"> 3 X 5 = </span>
+   <input type="textbox" name="3x5" data-value="15"> 
+</div>
+
+<div class="times vspace_bottom">
+   <span class="num"> 3 X 2 = </span><input type="textbox" name="3x2" data-value="6"> 
+</div>
+
+<div class="times vspace_bottom">
+   <span class="num"> 3 X 3 = </span><input type="textbox" name="3x3" data-value="9">  
+</div>
+
+
+
+
+<script>
+
+
+(function(){
+
+  $(".times input").on("change", function(){   
+   
+      var usrInput = this.value,
+          dataValue = this.getAttribute('data-value');
+
+          console.log(usrInput);
+          console.log(dataValue);
+
+  });
+
+
+})();
+</script>
+
+
+
+</body>
+
+
+
+</html>
+

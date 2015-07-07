@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Test</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<span class="button" data-button="1">Button 1</span>  |
+
+<span class="button" data-button="2">Button 2</span>
+
+
+<div id="contentWithJquery">
+
+</div>
+
+<div id="contentWithVanilla">
+
+</div>
+
+
+
+
+
+<script>
+(function(){
+    
+    
+   $('.button').on("click", function(){
+      var jqueryStyle = $(this).attr("data-button"); 
+      var vanillaJS =  this.getAttribute("data-button");
+      
+      if (vanillaJS == 1 ){
+      		document.getElementById('contentWithVanilla').innerHTML = "YOU hit number 1 with vanillar";
+      		document.getElementById('contentWithVanilla').style.backgroundColor = "yellow";
+
+      } else {
+      		document.getElementById('contentWithVanilla').innerHTML = "Oh Wait you hit now 2 with vanilla";
+      		document.getElementById('contentWithVanilla').style.backgroundColor = "red";
+
+      }
+
+      if (jqueryStyle == 1) {
+      		$("#contentWithJquery").html("You have offically hit button 1 with jquery");
+      		$("#contentWithJquery").css("background-color", "yellow");
+
+
+
+
+      } else {
+
+      	    $("#contentWithJquery").html("Oh Wait you hit button 2 with jquery");
+      	    $("#contentWithJquery").css("background-color", "red");
+
+
+
+
+      }
+
+
+
+        
+    });   
+     
+    
+    
+})();   
+</script>
+
+</body>
+
+
+
+</html>
+
